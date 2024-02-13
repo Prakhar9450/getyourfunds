@@ -11,6 +11,7 @@ function App() {
   let [specialCharacter, setSpecialCharacter] = useState(false);
   let [passwordLength, setPasswordLength] = useState(8);
   let [fPass, setfPass] = useState("");
+  let [copyButtonText, setCopyButtonText] = useState("Copy");
 
   let createPassword = () => {
     let charSet = "";
@@ -26,9 +27,15 @@ function App() {
       }
 
       setfPass(finalPass);
+      setCopyButtonText("Copy");
     } else {
       alert("Please Select atleast one Checkbox.....");
     }
+  };
+
+  let copyPass = () => {
+    navigator.clipboard.writeText(fPass);
+    setCopyButtonText("Copied!!");
   };
 
   return (
@@ -37,7 +44,8 @@ function App() {
         <h2>Password Generator</h2>
 
         <div className="passwordBoxIn">
-          <input type="text" readOnly value={fPass} /> <button>Copy</button>
+          <input type="text" readOnly value={fPass} />
+          <button onClick={copyPass}>{copyButtonText}</button>
         </div>
 
         <div className="passLength">
