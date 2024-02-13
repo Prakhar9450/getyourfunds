@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { LC, NC, SC, UC } from "./data/PassChar";
 
@@ -35,7 +33,7 @@ function App() {
 
   let copyPass = () => {
     navigator.clipboard.writeText(fPass);
-    setCopyButtonText("Copied!!");
+    setCopyButtonText("Copied✓");
   };
 
   return (
