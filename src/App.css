@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(43, 43, 72);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordBox {
+  width: 350px;
+  height: 300px;
+  padding: 20px;
+  background-color: blueviolet;
+}
+
+.passwordBoxIn {
+  display: flex;
+}
+
+.passwordBoxIn input {
+  flex-basis: 80%;
+  padding-left: 5px;
+}
+
+.passwordBoxIn button {
+  flex-basis: 20%;
+  padding: 10px 0px;
+}
