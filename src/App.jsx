@@ -10,14 +10,22 @@ function App() {
   let [number, setNumber] = useState(false);
   let [specialCharacter, setSpecialCharacter] = useState(false);
   let [passwordLength, setPasswordLength] = useState(8);
+  let [fPass, setfPass] = useState("");
 
   let createPassword = () => {
     let charSet = "";
+    let finalPass = "";
     if (uppercase || lowercase || number || specialCharacter) {
       if (uppercase) charSet += UC;
       if (lowercase) charSet += LC;
       if (number) charSet += NC;
       if (specialCharacter) charSet += SC;
+
+      for (let i = 0; i <= passwordLength; i++) {
+        finalPass += charSet.charAt(Math.floor(Math.random() * charSet.length));
+      }
+
+      setfPass(finalPass);
     } else {
       alert("Please Select atleast one Checkbox.....");
     }
@@ -29,7 +37,7 @@ function App() {
         <h2>Password Generator</h2>
 
         <div className="passwordBoxIn">
-          <input type="text" readOnly /> <button>Copy</button>
+          <input type="text" readOnly value={fPass} /> <button>Copy</button>
         </div>
 
         <div className="passLength">

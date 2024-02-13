@@ -30,6 +30,7 @@ body {
 .passwordBoxIn button {
   flex-basis: 20%;
   padding: 10px 0px;
+  cursor: pointer;
 }
 
 .passLength {
@@ -47,4 +48,5 @@ body {
 .btn {
   width: 100%;
   padding: 10px 0px;
+  cursor: pointer;
 }
