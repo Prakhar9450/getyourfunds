@@ -4,6 +4,12 @@
 
 This is a simple web-based application built using React that allows users to generate random passwords with customizable length and character composition preferences.
 
+## Website
+
+https://random-password-generator-free.vercel.app
+
+![Screenshot from 2024-02-13 23-13-53](https://github.com/Prakhar9450/Random_Password_Generator/blob/main/src/assets/Screenshot%202024-02-13%20231353.png)
+
 ## Features
 
 - Generate random passwords with custom length
