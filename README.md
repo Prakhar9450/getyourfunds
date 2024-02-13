@@ -47,3 +47,7 @@ https://random-password-generator-free.vercel.app
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+### VIDEO TUTORIAL
+
+https://github.com/Prakhar9450/Random_Password_Generator/blob/main/src/assets/ScreenRecord.mp4
