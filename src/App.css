@@ -1,10 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: #333333;
+  font-family: Comic Sans MS;
 }
 
 body {
-  background-color: rgb(43, 43, 72);
+  background-color: #f0f0f0;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -13,24 +16,49 @@ body {
 }
 
 .passwordBox {
-  width: 350px;
+  width: 375px;
   padding: 20px;
-  background-color: blueviolet;
+  background-color: #03a9f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.passwordBox h2 {
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.passwordBox:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .passwordBoxIn {
   display: flex;
+  margin-bottom: 10px;
 }
 
 .passwordBoxIn input {
   flex-basis: 80%;
-  padding-left: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 .passwordBoxIn button {
   flex-basis: 20%;
   padding: 10px 0px;
+  margin-left: 4px;
   cursor: pointer;
+  border-radius: 10px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.passwordBoxIn button:hover {
+  background-color: #e64a19;
 }
 
 .passLength {
@@ -40,13 +68,24 @@ body {
   justify-content: space-between;
 }
 
-.passLength input {
-  padding: 10px 0px;
-  width: 60px;
+.passLength input[type="number"],
+.passLength input[type="checkbox"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .btn {
   width: 100%;
+  border-radius: 10px;
   padding: 10px 0px;
   cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #388e3c;
 }

@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <div className="passwordBox">
-        <h2>Password Generator</h2>
+        <h2>Random Password Generator</h2>
 
         <div className="passwordBoxIn">
           <input type="text" readOnly value={fPass} />
