@@ -14,6 +14,11 @@ function App() {
         <div className="passwordBoxIn">
           <input type="text" readOnly /> <button>Copy</button>
         </div>
+
+        <div className="passLength">
+          <label>Password Length</label>
+          <input type="number" max="20" />
+        </div>
       </div>
     </>
   );

@@ -14,7 +14,6 @@ body {
 
 .passwordBox {
   width: 350px;
-  height: 300px;
   padding: 20px;
   background-color: blueviolet;
 }
@@ -31,4 +30,16 @@ body {
 .passwordBoxIn button {
   flex-basis: 20%;
   padding: 10px 0px;
+}
+
+.passLength {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.passLength input {
+  padding: 10px 0px;
+  width: 60px;
 }
