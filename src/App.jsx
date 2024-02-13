@@ -4,7 +4,10 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  let [uppercase, setUppercase] = useState(false);
+  let [lowercase, setLowercase] = useState(false);
+  let [number, setNumber] = useState(false);
+  let [specialCharacter, setSpecialCharacter] = useState(false);
 
   return (
     <>
@@ -22,22 +25,46 @@ function App() {
 
         <div className="passLength">
           <label>Include Uppercase Letters</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={uppercase}
+            onChange={() => {
+              setUppercase(!uppercase);
+            }}
+          />
         </div>
 
         <div className="passLength">
           <label>Include Lowercase Letters</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={lowercase}
+            onChange={() => {
+              setLowercase(!lowercase);
+            }}
+          />
         </div>
 
         <div className="passLength">
           <label>Include Numbers</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={number}
+            onChange={() => {
+              setNumber(!number);
+            }}
+          />
         </div>
 
         <div className="passLength">
           <label>Include Special Characters</label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={specialCharacter}
+            onChange={() => {
+              setSpecialCharacter(!specialCharacter);
+            }}
+          />
         </div>
 
         <button className="btn">Generate Password</button>
