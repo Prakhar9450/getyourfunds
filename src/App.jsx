@@ -2,12 +2,26 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { LC, NC, SC, UC } from "./data/PassChar";
 
 function App() {
   let [uppercase, setUppercase] = useState(false);
   let [lowercase, setLowercase] = useState(false);
   let [number, setNumber] = useState(false);
   let [specialCharacter, setSpecialCharacter] = useState(false);
+  let [passwordLength, setPasswordLength] = useState(8);
+
+  let createPassword = () => {
+    let charSet = "";
+    if (uppercase || lowercase || number || specialCharacter) {
+      if (uppercase) charSet += UC;
+      if (lowercase) charSet += LC;
+      if (number) charSet += NC;
+      if (specialCharacter) charSet += SC;
+    } else {
+      alert("Please Select atleast one Checkbox.....");
+    }
+  };
 
   return (
     <>
@@ -20,7 +34,13 @@ function App() {
 
         <div className="passLength">
           <label>Password Length</label>
-          <input type="number" max="20" />
+          <input
+            type="number"
+            max={20}
+            min={6}
+            value={passwordLength}
+            onChange={(e) => setPasswordLength(e.target.value)}
+          />
         </div>
 
         <div className="passLength">
@@ -67,7 +87,9 @@ function App() {
           />
         </div>
 
-        <button className="btn">Generate Password</button>
+        <button className="btn" onClick={createPassword}>
+          Generate Password
+        </button>
       </div>
     </>
   );
