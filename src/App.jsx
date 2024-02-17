@@ -1,110 +1,41 @@
-import { useState } from "react";
-import "./App.css";
-import { LC, NC, SC, UC } from "./data/PassChar";
+import { useState } from 'react';
+import { Navbar } from './components/Navbar';
+import { Input } from './components/Input';
+import './App.css';
+import {GoogleGenerativeAI} from "@google/generative-ai";
+import ResultDisplay from './components/ResultsDisplay';
 
 function App() {
-  let [uppercase, setUppercase] = useState(false);
-  let [lowercase, setLowercase] = useState(false);
-  let [number, setNumber] = useState(false);
-  let [specialCharacter, setSpecialCharacter] = useState(false);
-  let [passwordLength, setPasswordLength] = useState(8);
-  let [fPass, setfPass] = useState("");
-  let [copyButtonText, setCopyButtonText] = useState("Copy");
+  const [response, setResponse] = useState('');
+  const [searchParams, setSearchParams] = useState({ location: '', purpose: '' });
 
-  let createPassword = () => {
-    let charSet = "";
-    let finalPass = "";
-    if (uppercase || lowercase || number || specialCharacter) {
-      if (uppercase) charSet += UC;
-      if (lowercase) charSet += LC;
-      if (number) charSet += NC;
-      if (specialCharacter) charSet += SC;
+  const api_key = "apni api key daal";  
+  const genAI = new GoogleGenerativeAI(api_key);
 
-      for (let i = 0; i <= passwordLength; i++) {
-        finalPass += charSet.charAt(Math.floor(Math.random() * charSet.length));
-      }
+  async function run() {
+    // Use searchParams.location and searchParams.purpose in your prompt
+    const prompt = `Generate a list of top four scholarships/grants/schemes available for student  in ${searchParams.location}. Include information on eligibility criteria, application deadlines,amount ,  and any specific requirements related to ${searchParams.purpose}. Provide direct links to the official webpages of each scholarship to facilitate easy access for prospective applicants. The scholarships should encompass various fields and academic levels, ensuring a diverse array of opportunities for students.`;
+    console.log(prompt)
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    setResponse(text);
+  }
 
-      setfPass(finalPass);
-      setCopyButtonText("Copy");
-    } else {
-      alert("Please Select atleast one Checkbox.....");
-    }
-  };
-
-  let copyPass = () => {
-    navigator.clipboard.writeText(fPass);
-    setCopyButtonText("Copied✓");
+  const handleSearch = (location, purpose) => {
+    setSearchParams({ location, purpose });
+    run();
   };
 
   return (
     <>
-      <div className="passwordBox">
-        <h2>Random Password Generator</h2>
-
-        <div className="passwordBoxIn">
-          <input type="text" readOnly value={fPass} />
-          <button onClick={copyPass}>{copyButtonText}</button>
-        </div>
-
-        <div className="passLength">
-          <label>Password Length</label>
-          <input
-            type="number"
-            max={20}
-            min={6}
-            value={passwordLength}
-            onChange={(e) => setPasswordLength(e.target.value)}
-          />
-        </div>
-
-        <div className="passLength">
-          <label>Include Uppercase Letters</label>
-          <input
-            type="checkbox"
-            checked={uppercase}
-            onChange={() => {
-              setUppercase(!uppercase);
-            }}
-          />
-        </div>
-
-        <div className="passLength">
-          <label>Include Lowercase Letters</label>
-          <input
-            type="checkbox"
-            checked={lowercase}
-            onChange={() => {
-              setLowercase(!lowercase);
-            }}
-          />
-        </div>
-
-        <div className="passLength">
-          <label>Include Numbers</label>
-          <input
-            type="checkbox"
-            checked={number}
-            onChange={() => {
-              setNumber(!number);
-            }}
-          />
-        </div>
-
-        <div className="passLength">
-          <label>Include Special Characters</label>
-          <input
-            type="checkbox"
-            checked={specialCharacter}
-            onChange={() => {
-              setSpecialCharacter(!specialCharacter);
-            }}
-          />
-        </div>
-
-        <button className="btn" onClick={createPassword}>
-          Generate Password
-        </button>
+      <Navbar />
+      <div className='flex'>
+      <Input onSearch={handleSearch} />
+      <ResultDisplay response={response} />
       </div>
+      
     </>
   );
 }
