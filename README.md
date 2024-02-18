@@ -8,34 +8,55 @@ Welcome to getYourFunds, a website designed to help students in find top scholar
 
 https://getyourfunds.vercel.app/
 
-![Screenshot from 2024-02-13 23-13-53](https://github.com/Prakhar9450/Random_Password_Generator/blob/main/src/assets/Screenshot%202024-02-13%20231353.png)
+![Screenshot from 2024-02-18 15-47-15](https://github.com/Prakhar9450/getyourfunds/blob/main/src/assets/Screenshot%202024-02-18%20154715.png)
 
 ## Features
 
-- Generate random passwords with custom length
-- Include or exclude uppercase letters, lowercase letters, numbers, and special characters
-- Copy generated passwords to clipboard
+- Search Functionality: Users can input their location and purpose to find relevant scholarships.
+  = Google Generative AI Integration: The application leverages the Google Generative AI to generate scholarship listings based on user input.
+- Direct Links: The generated listings include direct links to the official webpages of each scholarship for easy access.
 
 ## Technologies Used
 
 - React
-- CSS
+- Google Generative AI
+- TailwindCSS
 
 ## Installation
 
 1. Clone the repository:
-   [git clone https://github.com//random-password-generator.git](https://github.com/Prakhar9450/Random_Password_Generator.git)
+
+```bash
+   [git clone https://github.com/Prakhar9450/getyourfunds.git](https://github.com/Prakhar9450/getyourfunds.git)
+```
 
 2. Navigate into the project directory:
-   cd random-password-generator
+
+```bash
+   cd getyourfunds
+```
 
 3. Install dependencies:
+
+```bash
    npm install
+```
 
-4. Start the development server:
+4. Set up Google Generative AI API Key:
+   Obtain an API key from Google Generative AI.
+   Set your API key in the .env file:
+
+```bash
+   VITE_API_KEY=your-api-key
+```
+
+5. Start the development server:
+
+```bash
    npm run dev
+```
 
-5. Open your browser and visit http://localhost:3000 to use the application.
+6. Open your browser and visit http://localhost:3000 to use the application.
 
 ## Usage
 
@@ -46,8 +67,4 @@ https://getyourfunds.vercel.app/
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
-
-### VIDEO TUTORIAL
-
-https://github.com/Prakhar9450/Random_Password_Generator/blob/main/src/assets/ScreenRecord.mp4
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
