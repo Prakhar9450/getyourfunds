@@ -13,7 +13,7 @@ https://getyourfunds.vercel.app/
 ## Features
 
 - Search Functionality: Users can input their location and purpose to find relevant scholarships.
-  = Google Generative AI Integration: The application leverages the Google Generative AI to generate scholarship listings based on user input.
+- Google Generative AI Integration: The application leverages the Google Generative AI to generate scholarship listings based on user input.
 - Direct Links: The generated listings include direct links to the official webpages of each scholarship for easy access.
 
 ## Technologies Used
@@ -27,7 +27,7 @@ https://getyourfunds.vercel.app/
 1. Clone the repository:
 
 ```bash
-   [git clone https://github.com/Prakhar9450/getyourfunds.git](https://github.com/Prakhar9450/getyourfunds.git)
+   git clone https://github.com/Prakhar9450/getyourfunds.git
 ```
 
 2. Navigate into the project directory:
