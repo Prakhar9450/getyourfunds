@@ -58,13 +58,6 @@ https://getyourfunds.vercel.app/
 
 6. Open your browser and visit http://localhost:3000 to use the application.
 
-## Usage
-
-1. Set the desired password length using the input field.
-2. Check the checkboxes to include uppercase letters, lowercase letters, numbers, and special characters in the generated password.
-3. Click the "Generate Password" button to generate a password.
-4. Click the "Copy" button to copy the generated password to the clipboard.
-
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
